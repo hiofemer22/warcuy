@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WARCUY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="bg"></div>
+
+  <!-- USERNAME -->
+  <div id="screen-username" class="screen active">
+    <div class="card">
+      <p class="subtitle">Ingresa tu nombre de guerrero</p>
+      <input id="inp-username" type="text" placeholder="Tu nombre..." maxlength="20" autocomplete="off">
+      <button id="btn-username" class="btn">Entrar al campo de batalla</button>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <div id="screen-menu" class="screen">
+    <div class="menu-wrap">
+      <button id="btn-create" class="btn btn-lg">⚔ Crear Sala</button>
+      <button id="btn-join"   class="btn btn-lg btn-outline">🛡 Ingresar a Sala</button>
+    </div>
+  </div>
+
+  <!-- LOBBY -->
+  <div id="screen-lobby" class="screen">
+    <div class="card lobby-card">
+      <h2 class="lobby-title" id="lobby-title">Sala de batalla</h2>
+
+      <div id="section-code">
+        <p class="label">Código de invitación</p>
+        <div class="room-code" id="room-code-display">------</div>
+        <button id="btn-copy" class="btn btn-sm">Copiar código</button>
+      </div>
+
+      <div id="section-join" style="display:none">
+        <p class="label">Ingresa el código de sala</p>
+        <input id="inp-join-code" type="text" placeholder="XXXXXX" maxlength="6" autocomplete="off">
+        <button id="btn-join-confirm" class="btn">Ingresar</button>
+      </div>
+
+      <div id="player-list"></div>
+
+      <div class="lobby-footer">
+        <button id="btn-start" class="btn" disabled>Esperando jugadores...</button>
+        <button id="btn-back"  class="btn btn-ghost">← Volver</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME -->
+  <div id="screen-game" class="screen">
+    <canvas id="canvas"></canvas>
+    <div id="hud">
+      <div id="hud-lives"></div>
+      <div id="hud-alive"></div>
+    </div>
+  </div>
+
+  <!-- GAMEOVER -->
+  <div id="screen-gameover" class="screen">
+    <div class="card gameover-card">
+      <h2 class="gameover-title">RESULTADO FINAL</h2>
+      <div id="ranking"></div>
+      <button id="btn-play-again" class="btn btn-lg">Menú Principal</button>
+    </div>
+  </div>
+
+  <!-- COUNTDOWN (global overlay) -->
+  <div id="countdown-overlay">
+    <div id="countdown-num"></div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <script src="client.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+node_modules/
+
+# Llaves y secretos: nunca al repositorio
+*.pem
+*.key
+.env
+
+# Archivo de bloqueo que crea Affinity mientras el diseño está abierto
+*~lock~
+
+# Carpeta vieja que solo contiene dependencias instaladas
+/warcuy/
